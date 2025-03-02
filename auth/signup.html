@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up | Modern App</title>
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f8f9fa;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .auth-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem;
+        margin: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .logo {
+        width: 80px;
+        margin-bottom: 1.5rem;
+      }
+      .form-control:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      }
+      .role-selection {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .role-btn {
+        flex: 1;
+        padding: 1rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .role-btn.active {
+        border-color: #6366f1;
+        background-color: rgba(99, 102, 241, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-card">
+      <form>
+        <img src="../public/assets/image/golang.png" class="logo" alt="logo" />
+        <h2 class="mb-4 fw-bold">Create Account</h2>
+        <p class="text-secondary mb-4">Start your journey with us</p>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            placeholder="johndoe123"
+          />
+          <label for="userName">User Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="John Doe"
+          />
+          <label for="fullName">Full Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="signupEmail"
+            placeholder="name@example.com"
+          />
+          <label for="signupEmail">Email address</label>
+        </div>
+
+        <div class="role-selection">
+          <div class="role-btn active" onclick="selectRole(this, 'seller')">
+            <h5 class="mb-1">Seller</h5>
+            <p class="text-muted small mb-0">I want to sell products</p>
+          </div>
+          <div class="role-btn" onclick="selectRole(this, 'buyer')">
+            <h5 class="mb-1">Buyer</h5>
+            <p class="text-muted small mb-0">I want to buy products</p>
+          </div>
+        </div>
+        <input type="hidden" name="role" id="selectedRole" value="seller" />
+
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="signupPassword"
+            placeholder="Password"
+          />
+          <label for="signupPassword">Password</label>
+        </div>
+
+        <div class="form-floating mb-4">
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <label for="confirmPassword">Confirm Password</label>
+        </div>
+
+        <button
+          class="w-100 btn btn-primary btn-lg mb-3"
+          type="submit"
+          style="background: #6366f1; border: none"
+        >
+          Create Account
+        </button>
+
+        <hr class="my-4" />
+        <p class="text-center text-secondary">
+          Already have an account?
+          <a href="login.html" class="text-primary text-decoration-none"
+            >Sign In</a
+          >
+        </p>
+      </form>
+    </div>
+
+    <script>
+      function selectRole(element, role) {
+        document
+          .querySelectorAll(".role-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        element.classList.add("active");
+        document.getElementById("selectedRole").value = role;
+      }
+    </script>
+  </body>
+</html>
