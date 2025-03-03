@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Store Management | Modern App</title>
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f8f9fa;
+        min-height: 100vh;
+      }
+      .main-card {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link.active {
+        color: #6366f1 !important;
+        border-bottom: 2px solid #6366f1;
+      }
+      .dropdown-item {
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+      }
+      .navbar .btn-link {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../public/assets/image/golang.png" width="40" alt="logo" />
+        </a>
+        <div class="d-flex align-items-center">
+          <a href="products.html" class="btn btn-link text-dark">Products</a>
+          <div class="dropdown">
+            <button
+              class="btn btn-link text-dark dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Seller Name
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="store.html">Store</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-card">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Edit Product</h3>
+        <button class="btn btn-outline-danger">Delete Product</button>
+      </div>
+
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="editProductName"
+                value="Product A"
+                required
+              />
+              <label for="editProductName">Product Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <select class="form-select" id="editProductCategory">
+                <option value="electronics" selected>Electronics</option>
+                <option value="clothes">Clothes</option>
+                <option value="accessories">Accessories</option>
+              </select>
+              <label for="editProductCategory">Category</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="editProductPrice"
+                value="99.99"
+                step="0.01"
+                required
+              />
+              <label for="editProductPrice">Price</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="editProductStock"
+                value="100"
+                required
+              />
+              <label for="editProductStock">Stock</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <textarea
+                class="form-control"
+                id="editProductDesc"
+                style="height: 150px"
+                required
+              >
+A high-quality product</textarea
+              >
+              <label for="editProductDesc">Description</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-outline-secondary">
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="background: #6366f1; border: none"
+          >
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
