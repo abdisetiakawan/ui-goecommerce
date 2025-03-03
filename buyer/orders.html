@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Orders | Modern App</title>
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      /* Same style as products.html */
+      body {
+        background: #f8f9fa;
+        min-height: 100vh;
+      }
+      .main-card {
+        max-width: 1000px;
+        padding: 2rem;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .order-card {
+        transition: transform 0.2s;
+        border-left: 4px solid;
+      }
+      .order-card.pending {
+        border-color: #ffc107;
+      }
+      .order-card.processed {
+        border-color: #0d6efd;
+      }
+      .order-card.shipped {
+        border-color: #198754;
+      }
+      .order-card.completed {
+        border-color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Buyer -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../public/assets/image/golang.png" width="40" alt="logo" />
+        </a>
+        <div class="d-flex align-items-center">
+          <a href="../buyer/products.html" class="btn btn-link text-dark"
+            >Shop</a
+          >
+          <a href="orders.html" class="btn btn-link text-dark">Orders</a>
+          <div class="dropdown">
+            <button
+              class="btn btn-link text-dark dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Buyer Name
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="../user/profile.html">Profile</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-card">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">My Orders</h3>
+        <div class="col-md-3">
+          <select class="form-select" id="statusFilter">
+            <option value="">All Status</option>
+            <option>pending</option>
+            <option>processed</option>
+            <option>shipped</option>
+            <option>completed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Order List -->
+      <div class="row g-4">
+        <!-- Order Card -->
+        <div class="col-12">
+          <div class="card order-card pending">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="w-75">
+                  <div class="d-flex justify-content-between mb-2">
+                    <h5 class="card-title">Order #12345</h5>
+                    <span class="badge bg-warning">pending</span>
+                  </div>
+                  <div class="d-flex gap-4 text-muted">
+                    <div>
+                      <i class="bi bi-clock-history me-1"></i>
+                      <span>2024-03-15 14:30</span>
+                    </div>
+                    <div>
+                      <i class="bi bi-currency-dollar me-1"></i>
+                      <span>Total: $299.99</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <a href="order.html" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Order Cards -->
+      </div>
+
+      <!-- Pagination -->
+      <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
